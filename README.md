@@ -83,6 +83,8 @@ Key variables:
 - `GET /health` - process liveness
 - `GET /ready` - readiness (includes database check when DB is enabled)
 - `GET /docs` - Swagger docs
+- `GET /sample/items` - example module list endpoint
+- `POST /sample/items` - example module create endpoint
 
 ## Docker
 

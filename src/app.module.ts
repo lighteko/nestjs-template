@@ -9,6 +9,7 @@ import { AppService } from '@/app.service';
 import { CommonModule } from '@/common/common.module';
 import { envValidationSchema } from '@/config/env.validation';
 import { buildTypeOrmOptions } from '@/database/typeorm.options';
+import { SampleModule } from '@/modules/sample/sample.module';
 
 const dbEnabled = (process.env.DB_ENABLED ?? 'false').toLowerCase() === 'true';
 
@@ -30,6 +31,7 @@ const dbEnabled = (process.env.DB_ENABLED ?? 'false').toLowerCase() === 'true';
     ]),
     ...(dbEnabled ? [TypeOrmModule.forRoot(buildTypeOrmOptions())] : []),
     CommonModule,
+    SampleModule,
   ],
   controllers: [AppController],
   providers: [
